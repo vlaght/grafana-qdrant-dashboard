@@ -1061,7 +1061,7 @@
           },
           "editorMode": "code",
           "expr": "grpc_responses_avg_duration_seconds",
-          "legendFormat": "avg",
+          "legendFormat": "{{ host }} avg",
           "range": true,
           "refId": "A"
         },
@@ -1073,7 +1073,7 @@
           "editorMode": "code",
           "expr": "grpc_responses_min_duration_seconds",
           "hide": false,
-          "legendFormat": "min",
+          "legendFormat": "{{host}} min",
           "range": true,
           "refId": "B"
         },
@@ -1085,7 +1085,7 @@
           "editorMode": "code",
           "expr": "grpc_responses_max_duration_seconds",
           "hide": false,
-          "legendFormat": "max",
+          "legendFormat": "{{host}} max",
           "range": true,
           "refId": "C"
         }
@@ -1152,112 +1152,8 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 12,
+        "w": 24,
         "x": 0,
-        "y": 49
-      },
-      "id": 9,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "editorMode": "code",
-          "expr": "grpc_responses_total",
-          "legendFormat": "success",
-          "range": true,
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "editorMode": "code",
-          "expr": "grpc_responses_fail_total",
-          "hide": false,
-          "legendFormat": "failed",
-          "range": true,
-          "refId": "B"
-        }
-      ],
-      "title": "gRPC API responses total",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "000000001"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
         "y": 49
       },
       "id": 25,
@@ -1397,8 +1293,8 @@
             "uid": "000000001"
           },
           "editorMode": "code",
-          "expr": "avg(rest_responses_avg_duration_seconds)",
-          "legendFormat": "avg",
+          "expr": "rest_responses_avg_duration_seconds",
+          "legendFormat": "{{host}} avg",
           "range": true,
           "refId": "A"
         },
@@ -1408,9 +1304,9 @@
             "uid": "000000001"
           },
           "editorMode": "code",
-          "expr": "avg(rest_responses_min_duration_seconds)",
+          "expr": "rest_responses_min_duration_seconds",
           "hide": false,
-          "legendFormat": "min",
+          "legendFormat": "{{host}} min",
           "range": true,
           "refId": "B"
         },
@@ -1420,9 +1316,9 @@
             "uid": "000000001"
           },
           "editorMode": "code",
-          "expr": "avg(rest_responses_max_duration_seconds)",
+          "expr": "rest_responses_max_duration_seconds",
           "hide": false,
-          "legendFormat": "max",
+          "legendFormat": "{{host}} max",
           "range": true,
           "refId": "C"
         }
@@ -1488,113 +1384,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 12,
+        "h": 8,
+        "w": 24,
         "x": 0,
-        "y": 67
-      },
-      "id": 24,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "editorMode": "code",
-          "expr": "avg(rest_responses_total)",
-          "legendFormat": "success",
-          "range": true,
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "000000001"
-          },
-          "editorMode": "code",
-          "expr": "avg(rest_responses_fail_total)",
-          "hide": false,
-          "legendFormat": "failed",
-          "range": true,
-          "refId": "B"
-        }
-      ],
-      "title": "REST API responses total",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "000000001"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
         "y": 67
       },
       "id": 10,
@@ -1654,6 +1446,6 @@
   "timezone": "",
   "title": "Qdrant",
   "uid": "7UW0COl4k",
-  "version": 19,
+  "version": 20,
   "weekStart": ""
 }
