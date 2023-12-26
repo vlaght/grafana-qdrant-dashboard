@@ -101,7 +101,7 @@
           "reverse": false
         }
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.3.16",
       "targets": [
         {
           "datasource": {
@@ -256,7 +256,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.3.16",
       "targets": [
         {
           "datasource": {
@@ -357,7 +357,7 @@
           },
           "editorMode": "builder",
           "expr": "cluster_peers_total",
-          "legendFormat": "active cluster peers({{host}})",
+          "legendFormat": "{{host}}",
           "range": true,
           "refId": "A"
         }
@@ -503,7 +503,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.3.16",
       "targets": [
         {
           "datasource": {
@@ -579,7 +579,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.3.16",
       "targets": [
         {
           "datasource": {
@@ -1280,7 +1280,7 @@
             "uid": "000000001"
           },
           "editorMode": "builder",
-          "expr": "avg(irate(grpc_responses_total[$__interval]))",
+          "expr": "avg(irate(grpc_responses_total[1m]))",
           "legendFormat": "success",
           "range": true,
           "refId": "A"
@@ -1291,7 +1291,7 @@
             "uid": "000000001"
           },
           "editorMode": "code",
-          "expr": "avg(irate(grpc_responses_fail_total[$__interval]))",
+          "expr": "avg(irate(grpc_responses_fail_total[1m]))",
           "hide": false,
           "legendFormat": "failed",
           "range": true,
@@ -1359,7 +1359,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1474,7 +1475,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1577,7 +1579,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1614,7 +1617,7 @@
             "uid": "000000001"
           },
           "editorMode": "builder",
-          "expr": "avg(irate(rest_responses_total[$__interval]))",
+          "expr": "avg(irate(rest_responses_total[1m]))",
           "legendFormat": "success",
           "range": true,
           "refId": "A"
@@ -1625,7 +1628,7 @@
             "uid": "000000001"
           },
           "editorMode": "code",
-          "expr": "avg(irate(rest_responses_fail_total[$__interval]))",
+          "expr": "avg(irate(rest_responses_fail_total[1m]))",
           "hide": false,
           "legendFormat": "failed",
           "range": true,
@@ -1644,13 +1647,13 @@
     "list": []
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Qdrant",
   "uid": "7UW0COl4k",
-  "version": 17,
+  "version": 19,
   "weekStart": ""
 }
